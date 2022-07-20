@@ -1,0 +1,122 @@
+:root {
+  --primary-scissors-gradient: #ec9e0e to #eca922;
+  --primary-paper-gradient: #4865f4 to #5671f5;
+  --primary-rock-gradient: #dc2e4e to #dd405d;
+
+  --neutral-dark-text: #3b4363;
+  --neutral-score-text: #2a46c0;
+  --neutral-header-outline: #606e85;
+
+  --background-color: #1f3756 to #141539;
+}
+
+.gameplay_container {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.fade_gameplay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.inner_gameplay_container {
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8rem;
+}
+
+.gameplay_triangle {
+  display: flex;
+  position: relative;
+}
+
+.triangle_img {
+  width: 260px;
+}
+
+/* ----------------------------------- */
+
+.outer_ring {
+  position: absolute;
+  padding: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.outer_ring:hover .inner_ring img {
+  transform: scale(1.08);
+}
+
+.gameplay_rock {
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 40%);
+  background-color: #dd405d;
+  box-shadow: 0px 5px 0px 0px #dc2e4e;
+}
+
+.gameplay_paper {
+  left: 0%;
+  top: 0%;
+  transform: translate(-50%, -50%);
+  background-color: #5671f5;
+  box-shadow: 0px 5px 0px 0px #4865f4;
+}
+
+.gameplay_scissors {
+  right: 0%;
+  top: 0%;
+  transform: translate(50%, -50%);
+  background-color: #eca922;
+  box-shadow: 0px 5px 0px 0px #ec9e0e;
+}
+
+.inner_ring {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0px 6px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.inner_ring img {
+  width: 55px;
+  transition: 0.2s ease;
+}
+
+/* ----------------------------------- RESPONSIVE DESIGN ----------------------------------- */
+
+@media (max-width: 550px) {
+  .inner_gameplay_container {
+    padding-top: 9rem;
+  }
+
+  .triangle_img {
+    width: 200px;
+  }
+
+  .outer_ring {
+    padding: 1rem;
+  }
+
+  .inner_ring {
+    padding: 1rem;
+    width: 95px;
+    height: 95px;
+  }
+
+  .inner_ring img {
+    width: 45px;
+  }
+}
